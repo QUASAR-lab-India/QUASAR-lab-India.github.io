@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Quantum & Smart Systems Research Lab Website
 
 A modern, responsive website showcasing advanced research in quantum computing, artificial intelligence, and smart systems. Built with cutting-edge web technologies and designed for research institutions, universities, and laboratories.
@@ -206,3 +207,6 @@ Potential improvements for future versions:
 **Built with ❤️ for the quantum computing and AI research community**
 
 *Last updated: December 2024*
+=======
+# QUASAR-lab-India.github.io
+>>>>>>> 7a43e44d6ba8230a9296320c9c37d5db06dd3520
