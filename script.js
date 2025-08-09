@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
         // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
@@ -87,22 +85,26 @@ if (contactForm) {
         
         // Basic validation
         if (!name || !email || !subject || !message) {
+            e.preventDefault();
             showNotification('Please fill in all fields.', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
+            e.preventDefault();
             showNotification('Please enter a valid email address.', 'error');
             return;
         }
         
-        // Simulate form submission
+        // Show success message and let form submit to Formspree
         showNotification('Thank you for your message! We will get back to you soon.', 'success');
         
-        // Reset form
-        this.reset();
+        // Reset form after a short delay to allow Formspree to process
+        setTimeout(() => {
+            this.reset();
+        }, 1000);
         
-        // In a real application, you would send the data to a server here
+        // Log form submission
         console.log('Form submitted:', { name, email, subject, message });
     });
 }
